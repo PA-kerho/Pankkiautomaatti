@@ -7,5 +7,6 @@
 
 <ul>
 	<li><a href="<?php echo site_url('etusivu'); ?>">Etusivu</a></li>
+	<li><a href="<?php echo site_url('asiakas/nayta_asiakas'); ?>">Asiakaslista</a></li>
 	
 </ul>
