@@ -12,4 +12,10 @@ class Asiakas_model extends CI_Model{
 		$testi=$this->db->affected_rows();
 		return $testi;
 	}
+	public function delAsiakas($id){
+	$this->db->where('ID',$id);
+ 	$this->db->delete('Asiakas');
+	$testi=$this->db->affected_rows();
+	return $testi;
+	}
 }

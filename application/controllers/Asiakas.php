@@ -37,4 +37,24 @@ class Asiakas extends CI_Controller {
 		$this->load->view('menu/sisalto',$data);
 
 		}
+		public function nayta_poistettavat() {
+		
+		$data['asiakas']=$this->Asiakas_model->getAsiakas();
+		$data['sivun_sisalto']='asiakas/poista_asiakas';
+		$this->load->view('menu/sisalto',$data);
+
+
+
+	}
+	public function poista_asiakas($id){
+		
+		$poista_asiakas=$this->Asiakas_model->delAsiakas($id);	
+		 if ($poista_asiakas>0){
+ 			echo '<script>alert("Poisto onnistui")</script>';
+ 		}
+
+			$data['asiakas']=$this->Asiakas_model->getAsiakas();
+			$data['sivun_sisalto']='asiakas/nayta_asiakas';
+			$this->load->view('menu/sisalto',$data);
+	}
 	}
