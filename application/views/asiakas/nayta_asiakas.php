@@ -10,6 +10,7 @@
 	<TH>Osoite</TH>
 	<TH>Postinumero</TH>
 	<TH>Postitoimipaikka</TH>
+	<TH>Poista</TH>
 	</TR>
 	<?php
 	foreach ($asiakas as $rivi) {
@@ -20,8 +21,12 @@
 		<td>'.$rivi['Email'].'</td>
 		<td>'.$rivi['Puhelinnumero'].'</td>
 		<td>'.$rivi['Osoite'].'</td><td>'.$rivi['Postitoimipaikka'].'</td>
-		<td>'.$rivi['Postinumero'].'</td>
-		</tr>';
+		<td>'.$rivi['Postinumero'].'</td><td>';
+		
+		echo '<a href="poista_asiakas/';
+		echo $rivi['ID'].'">Poista</a>';
+		echo '</td></tr>';
+		
 	}
 ?>
-</TABLE>
+</TABLE> 
