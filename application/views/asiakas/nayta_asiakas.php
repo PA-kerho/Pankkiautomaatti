@@ -10,7 +10,6 @@
 	<TH>Osoite</TH>
 	<TH>Postinumero</TH>
 	<TH>Postitoimipaikka</TH>
-	<TH>Poista</TH>
 	</TR>
 	<?php
 	foreach ($asiakas as $rivi) {
@@ -25,7 +24,9 @@
 		<td>'.$rivi['Postinumero'].'</td><td>';
 		
 
-		echo '<form action="poista_asiakas" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btnpoista_asiakas" value="Poista"/>
+		echo '<form action="poista_asiakas" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btnpoista_asiakas" class="btn btn-primary btn-xs" value="Poista"/>
+		</form>';
+		echo '</td><td>&nbsp&nbsp;</td><td><form action="nayta_muokattavat_asiakkaat" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btn_paivita_asiakas" class="btn btn-primary btn-xs" value="Muokkaa"/>
 		</form>'; 
 		
 		echo '</td></tr>';

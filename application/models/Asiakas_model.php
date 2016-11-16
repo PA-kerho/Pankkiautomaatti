@@ -18,4 +18,7 @@ class Asiakas_model extends CI_Model{
 	$testi=$this->db->affected_rows();
 	return $testi;
 	}
+
+
+		
 }
