@@ -59,50 +59,36 @@ class Asiakas extends CI_Controller {
 			$this->load->view('menu/sisalto',$data);
 
 			}
-		}
+	}
 
-		public function nayta_muokattavat_asiakkaat() {
-		$data['Asiakas']=$this->Asiakas_model->getAsiakas();
-		$data['sivun_sisalto']='asiakas/nayta_muokattavat_asiakkaat';
+	
+	public function nayta_muokattava_asiakas() {
+		$id = $this->input->get('ID');
+		$data['asiakas']=$this->Asiakas_model->getValittuAsiakas($id);
+		$data['id']=$id;
+		$data['sivun_sisalto']='asiakas/nayta_muokattava_asiakas';
 		$this->load->view('menu/sisalto',$data);
-}
+	}
 
-		public function paivita_asiakkaat() {
-		$button=$this->input->post('btn_paivita_asiakas');
+	public function paivita_asiakas(){
 		$btn=$this->input->post('btnTallenna');
-		if(isset($button)){
 		//jos tallenna painiketta painettu
-		if (isset($btn)){
-			$id=$this->input->post('ID');
-			$enimi=$this->input->post('en');
-			$snimi=$this->input->post('sn');
-			$hetu=$this->input->post('ht');
-			$puhelin=$this->input->post('puh');
-			$email=$this->input->post('em');
-			$osoite=$this->input->post('os');
-			$postitoimipaikka=$this->input->post('psp');
-			$postinumero=$this->input->post('psn');
+			if(isset($btn))
+		 	{
+		 		$id=$this->input->post('ID');
+				$update_data = array(
+				"Etunimet"=>$this->input->post('en'),
+				"Sukunimi"=>$this->input->post('sn'),
+				"Hetu"=>$this->input->post('ht'),
+				"Puhelinnumero"=>$this->input->post('puh'),
+				"Email"=>$this->input->post('em'),
+				"Osoite"=>$this->input->post('os'),
+				"Postitoimipaikka"=>$this->input->post('psp'),
+				"Postinumero"=>$this->input->post('psn'));
+			 $testi= $this->Asiakas_model->updateAsiakas($update_data,$id);
+			 $this->nayta_asiakas();
+			}
 
-		//lasketaan rivit
-		$lkm=0;
-		foreach ($id as $rivi) {
-			$lkm++;
-		}
-	}
-		//päivitetaan tietokantaa rivi kerrallaan
-		for ($x=0; $x<$lkm; $x++) {
-			$update_data= array(
-				"Etunimet"=>$enimi[$x],
-				"Sukunimi"=>$snimi[$x],
-				"Email"=>$email[$x],
-				"Osoite"=>$osoite[$x],
-				"Postitoimipaikka"=>$postitoimipaikka[$x],
-				"Postinumero"=>$postinumero[$x]
-				);
-			$testi= $this->Asiakas_model->updateAsiakas($update_data,$id[$x]);
-		}
-		$this->nayta_asiakas();
 	}
 }
 
-}
