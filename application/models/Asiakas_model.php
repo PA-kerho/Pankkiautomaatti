@@ -17,8 +17,7 @@ class Asiakas_model extends CI_Model{
 	 	$this->db->delete('Asiakas');
 		$testi=$this->db->affected_rows();
 		return $testi;
-<<<<<<< HEAD
-=======
+
 	}
 	public function updateAsiakas($update_data,$id) {
 		$this->db->where('ID',$id);
@@ -31,6 +30,6 @@ class Asiakas_model extends CI_Model{
 		$this->db->from('Asiakas');
 		$this->db->where('ID',$id);
 		return $this->db->get()->result_array();
->>>>>>> master
+
 	}
 }

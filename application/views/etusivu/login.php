@@ -1,5 +1,6 @@
 
 <form method='POST' action="handleLogin">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('style/css/bootstrap.min.css');?>">
 
 <TABLE Border=0>
 	<tr>
