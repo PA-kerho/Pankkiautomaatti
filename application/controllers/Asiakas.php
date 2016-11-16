@@ -6,15 +6,15 @@ class Asiakas extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Asiakas_model');
 	}
-		public function nayta_asiakas(){
+	public function nayta_asiakas(){
 		$this->load->model('Asiakas_model');
 		$data['asiakas']=$this->Asiakas_model->getAsiakas();
 		$data['sivun_sisalto']='asiakas/nayta_asiakas';
 		$this->load->view('menu/sisalto',$data);
 	
-}
+	}
 
-   		public function lisaa_asiakas() {
+   	public function lisaa_asiakas() {
 		$btn=$this->input->post('btnTallenna');
 		$lisaa_asiakas=array(
 			"Etunimet"=>$this->input->post('en'),
@@ -36,25 +36,29 @@ class Asiakas extends CI_Controller {
 		$data['sivun_sisalto']='asiakas/lisaa_asiakas';
 		$this->load->view('menu/sisalto',$data);
 
-		}
-		public function nayta_poistettavat() {
+	}
+	public function nayta_poistettavat() {
 		
 		$data['asiakas']=$this->Asiakas_model->getAsiakas();
 		$data['sivun_sisalto']='asiakas/poista_asiakas';
 		$this->load->view('menu/sisalto',$data);
-
-
-
 	}
-	public function poista_asiakas($id){
+	public function poista_asiakas(){
+		$btn = $this->input->post('btnpoista_asiakas');
+		$id = $this->input->post('ID');
 		
-		$poista_asiakas=$this->Asiakas_model->delAsiakas($id);	
-		 if ($poista_asiakas>0){
- 			echo '<script>alert("Poisto onnistui")</script>';
- 		}
+		if(isset($btn)){
+			$poista_asiakas=$this->Asiakas_model->delAsiakas($id);	
+			if ($poista_asiakas>0){
+ 				echo '<script>alert("Poisto onnistui");</script>';
+ 			}
+ 			
 
 			$data['asiakas']=$this->Asiakas_model->getAsiakas();
 			$data['sivun_sisalto']='asiakas/nayta_asiakas';
 			$this->load->view('menu/sisalto',$data);
-	}
+
+			}
+		}
+
 	}
