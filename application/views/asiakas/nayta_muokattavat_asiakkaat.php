@@ -1,6 +1,15 @@
 <FORM action="paivita_asiakkaat" method="POST">
 <TABLE class="table table-striped table-bordered">
-<TR><TH>Etunimi</TH><TH>Sukunimi</TH><TH>Hetu</TH><TH>Puhelinnumero</TH><TH>Sähköposti</TH><TH>Osoite</TH><TH>Postitoimipaikka</TH><TH>Postinumero</TH></TR>
+<TR>
+<TH>Etunimi</TH>
+<TH>Sukunimi</TH>
+<TH>Hetu</TH>
+<TH>Puhelinnumero</TH>
+<TH>Sähköposti</TH>
+<TH>Osoite</TH>
+<TH>Postitoimipaikka</TH>
+<TH>Postinumero</TH>
+</TR>
 <?php
 foreach ($Asiakas as $rivi) {
 	
