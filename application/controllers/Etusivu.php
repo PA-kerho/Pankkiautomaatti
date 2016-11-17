@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Etusivu extends CI_Controller {
 
 	public function index(){
-		$data['sivun_sisalto']='etusivu/index';
+		$data['sivun_sisalto']='etusivu/login';
 		$this->load->view('menu/sisalto',$data);
 	}
 	public function login(){
