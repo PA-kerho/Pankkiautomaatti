@@ -22,16 +22,19 @@
 		<td>'.$rivi['Osoite'].'</td>
 		<td>'.$rivi['Postitoimipaikka'].'</td>
 		<td>'.$rivi['Postinumero'].'</td><td>';
-		?>
-		}
-
-
-
 		
-		<?php
+
 		echo '<form action="poista_asiakas" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btnpoista_asiakas" class="btn btn-primary btn-xs" value="Poista"/>
 		</form>';
-		echo '<a href="nayta_muokattava_asiakas?ID='.$rivi['ID'].'" class="btn btn-primary btn-xs">Muokkaa</a>';
+		/*echo '</td><td>&nbsp&nbsp;</td><td><form action="nayta_muokattava_asiakas" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btn_paivita_asiakas" class="btn btn-primary btn-xs" value="Muokkaa"/>
+		</form>'; */
+		echo '<td><a href="nayta_muokattava_asiakas?ID='.$rivi['ID'].'" class="btn btn-primary btn-xs">Muokkaa</a></td></tr>';
 		
+		echo '</td></tr>';
+
+		
+	}
+
 ?>
-</TABLE>
+
+</TABLE> 
