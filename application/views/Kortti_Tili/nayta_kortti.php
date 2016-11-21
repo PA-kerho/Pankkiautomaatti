@@ -6,19 +6,20 @@
 	<TH>KortinNumero</TH>
 	<TH>PinKoodi</TH>
 	<TH>Voimassa</TH>
+	<TH></TH>
 
 	
 	</TR>
 	<?php
-	foreach ($asiakas as $rivi) {
+	foreach ($Kortti_Tili as $rivi) {
 		echo '<tr>
-		<td>'.$rivi['ID_kortti'].'</td>
+		<td>'.$rivi['ID'].'</td>
 		<td>'.$rivi['KortinNumero'].'</td>
 		<td>'.$rivi['PinKoodi'].'</td>
-		<td>'.$rivi['Voimassaoloaika'].'</td>';
+		<td>'.$rivi['Voimassaoloaika'].'</td><td>';
 		
 
-		echo '<form action="poista_asiakas" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btnpoista_asiakas" class="btn btn-primary btn-xs" value="Poista"/>
+		echo '<form action="poista_kortti" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btnpoista_kortti" class="btn btn-primary btn-xs" value="Poista"/>
 		</form>';
 		/*
 		

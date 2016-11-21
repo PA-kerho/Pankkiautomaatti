@@ -47,9 +47,9 @@ class Kortti_Tili extends CI_Controller {
  			}
  			
 
-			$data['Kortti_Tili']=$this->Kortti_Tili_model->getKortit();
-			$data['sivun_sisalto']='Kortti_Tili/nayta_kortti';
-			$this->load->view('menu/sisalto',$data);
+				$data['Kortti_Tili']=$this->Kortti_Tili_model->getKortit();
+				$data['sivun_sisalto']='Kortti_Tili/nayta_kortti';
+				$this->load->view('menu/sisalto',$data);
 
 			}
 
