@@ -1,7 +1,5 @@
 <?php
 
-//session_start(); //we need to start session in order to access it through CI
-
 Class Kirjaudu extends CI_Controller {
 
 public function __construct() {
@@ -22,7 +20,16 @@ $this->load->model('Kirjaudu_model');
 
 // Show login page
 public function index() {
-$this->load->view('etusivu/login');
+	$data['sivun_sisalto']='etusivu/index';
+		if(isset($_SESSION['logged_in'])){
+		$this->load->view('menu/sisalto',$data);
+		}
+		else{
+			//header('Location:http://localhost/Pankkiautomaatti/index.php/kirjaudu/index');
+			//$this->load->view('etusivu/login');
+			$this->load->view('etusivu/login');
+			}
+
 }
 
 // Check for user login process
@@ -51,7 +58,6 @@ public function user_login_process() {
 				if ($result != false) {
 				$session_data = array(
 				'username' => $result[0]->Nimi,
-				//'email' => $result[0]->user_email,
 				);
 				// Add user data in session
 				$this->session->set_userdata('logged_in', $session_data);

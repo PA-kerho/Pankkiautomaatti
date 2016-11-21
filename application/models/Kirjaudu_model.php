@@ -22,7 +22,6 @@ if ($query->num_rows() == 1 && $result[0]['Tiiviste'] == sha1($data['password'].
 	}
 }
 
-// Read data from database to show data in admin page
 public function read_user_information($username) {
 
 $condition = "Nimi =" . "'" . $username . "'";
