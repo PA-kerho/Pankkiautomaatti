@@ -50,8 +50,8 @@ public function user_login_process() {
 			$result = $this->Kirjaudu_model->read_user_information($username);
 				if ($result != false) {
 				$session_data = array(
-				'username' => $result[0]->user_name,
-				'email' => $result[0]->user_email,
+				'username' => $result[0]->Nimi,
+				//'email' => $result[0]->user_email,
 				);
 				// Add user data in session
 				$this->session->set_userdata('logged_in', $session_data);

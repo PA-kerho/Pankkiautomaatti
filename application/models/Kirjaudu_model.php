@@ -5,14 +5,16 @@ Class Kirjaudu_model extends CI_Model {
 // Read data using username and password
 public function login($data) {
 
-$condition = "user_name =" . "'" . $data['username'] . "' AND " . "user_password =" . "'" . $data['password'] . "'";
-$this->db->select('*');
-$this->db->from('user_login');
+
+$condition = "Nimi =  '" . $data['username'] . "'";
+$this->db->select('Tiiviste,Suola');
+$this->db->from('Kayttajat');
 $this->db->where($condition);
 $this->db->limit(1);
 $query = $this->db->get();
-
-if ($query->num_rows() == 1) {
+$result = $query->result_array();
+echo '<script>console.log('.json_encode($result).')</script>';
+if ($query->num_rows() == 1 && $result[0]['Tiiviste'] == sha1($data['password'].$result[0]['Suola'])  ) {
 	return true;
 	} 
 	else {
@@ -23,9 +25,9 @@ if ($query->num_rows() == 1) {
 // Read data from database to show data in admin page
 public function read_user_information($username) {
 
-$condition = "user_name =" . "'" . $username . "'";
+$condition = "Nimi =" . "'" . $username . "'";
 $this->db->select('*');
-$this->db->from('user_login');
+$this->db->from('Kayttajat');
 $this->db->where($condition);
 $this->db->limit(1);
 $query = $this->db->get();
