@@ -105,5 +105,15 @@ class Kortti_Tili extends CI_Controller {
 		$data['sivun_sisalto']='Kortti_Tili/lisaa_tili';
 		$this->load->view('menu/sisalto',$data);
 	}
+
+	public function korttien_hallinta(){
+		$data['sivun_sisalto'] = 'Kortti_Tili/korttien_hallinta';
+		$this->load->view('menu/sisalto',$data);
+	}
+
+	public function tilien_hallinta(){
+		$data['sivun_sisalto'] = 'Kortti_Tili/tilien_hallinta';
+		$this->load->view('menu/sisalto',$data);
+	}
 }
 	

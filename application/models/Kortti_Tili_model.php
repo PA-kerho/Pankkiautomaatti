@@ -2,11 +2,9 @@
 
 class Kortti_Tili_model extends CI_Model{
 	public function getKortit(){
-<<<<<<< HEAD
+
 		$this->db->select('*');
-=======
 		$this->db->select('ID,KortinNumero,PinKoodi,Voimassaoloaika');
->>>>>>> master
 		$this->db->from('Kortit');
 		return $this->db->get()->result_array();
 
@@ -27,7 +25,6 @@ class Kortti_Tili_model extends CI_Model{
 		return $testi;
 
 	}
-<<<<<<< HEAD
 
 	public function getTilit(){
 		$this->db->select('*');
@@ -50,8 +47,4 @@ class Kortti_Tili_model extends CI_Model{
 		return $testi;
 
 	}
-=======
-	
-
->>>>>>> master
 }
