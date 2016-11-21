@@ -1,26 +1,20 @@
 <?php
-//session_start();
+ini_set("display_errors", 1);
+ini_set("error_reporting", E_ALL | E_STRICT);
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Etusivu extends CI_Controller {
+class Login extends CI_Controller {
 
-	public function index(){
+public function index(){
 		$data['sivun_sisalto']='etusivu/index';
-		if(isset($_SESSION['logged_in'])){
 		$this->load->view('menu/sisalto',$data);
-		}
-		else{
-			header('Location:http://localhost/Pankkiautomaatti/index.php/kirjaudu/index');
-			//$this->load->view('etusivu/login');
-		}
+		
+		
 	}
-	/*public function login(){
-		$data['sivun_sisalto']='';
-		$this->load->view('etusivu/login',$data);
 
-	}
-	public function handleLogin(){
+		public function handleLogin(){
+		$this->load->library('session');
 		$btn = $this->input->post('nappi');
 		if(isset($btn)){
 			$user = $this->input->post('Käyttäjätunnus');
@@ -29,9 +23,11 @@ class Etusivu extends CI_Controller {
 			$oikeasalasana="test";
 			if ($user==$oikeatunnus){
 				if ($password==$oikeasalasana){
-					$_SESSION['kirjautunut']=TRUE;
-					$_SESSION['user']=$oikeatunnus;
-					header('Location:index');
+					$this->session->set_userdata('user', $oikeatunnus);
+					echo '<script>alert("'.$_SESSION['user'].'")</script>';
+					$data['sivun_sisalto']='etusivu/index';
+					$this->load->view('menu/sisalto',$data);
+
 				} 
 				else {
 					echo '<script>alert("Käyttäjätunnus tai Salasana ei täsmää")</script>';
@@ -40,13 +36,8 @@ class Etusivu extends CI_Controller {
 						}
 				else {	echo '<script>alert("Käyttäjätunnus tai Salasana ei täsmää")</script>';
 				}
-					$this->load->view('etusivu/login');
 					
+
 		}
 	}
-
-	public function Logout(){
-		$data['sivun_sisalto']='';
-		$this->load->view('etusivu/logout');
-	}*/
 }
