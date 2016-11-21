@@ -2,7 +2,7 @@
 
 class Kortti_Tili_model extends CI_Model{
 	public function getKortit(){
-		$this->db->select('ID_kortti,KortinNumero,PinKoodi');
+		$this->db->select('ID,KortinNumero,PinKoodi,Voimassaoloaika');
 		$this->db->from('Kortit');
 		return $this->db->get()->result_array();
 
@@ -16,10 +16,12 @@ class Kortti_Tili_model extends CI_Model{
 	}
 
 	public function delKortit($id){
-		$this->db->where('ID_kortti',$id);
+		$this->db->where('ID',$id);
 	 	$this->db->delete('Kortit');
 		$testi=$this->db->affected_rows();
 		return $testi;
 
 	}
+	
+
 }
