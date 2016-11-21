@@ -21,4 +21,5 @@ class Kortti_Tili_model extends CI_Model{
 		$testi=$this->db->affected_rows();
 		return $testi;
 
+	}
 }

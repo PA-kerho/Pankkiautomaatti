@@ -5,6 +5,8 @@
 	<TH>ID_kortti</TH>
 	<TH>KortinNumero</TH>
 	<TH>PinKoodi</TH>
+	<TH>Voimassa</TH>
+
 	
 	</TR>
 	<?php
@@ -12,7 +14,8 @@
 		echo '<tr>
 		<td>'.$rivi['ID_kortti'].'</td>
 		<td>'.$rivi['KortinNumero'].'</td>
-		<td>'.$rivi['PinKoodi'].'</td>';
+		<td>'.$rivi['PinKoodi'].'</td>
+		<td>'.$rivi['Voimassaoloaika'].'</td>';
 		
 
 		echo '<form action="poista_asiakas" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btnpoista_asiakas" class="btn btn-primary btn-xs" value="Poista"/>
