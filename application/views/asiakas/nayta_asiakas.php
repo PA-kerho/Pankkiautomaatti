@@ -1,10 +1,9 @@
 <h1>Asiakkaat</h1>
 
-<<<<<<< HEAD
-<TABLE class="table" BORDER=2>
-=======
+
+
 <TABLE class="table">
->>>>>>> master
+
 	<TR>
 	<TH>Etunimi</TH>
 	<TH>Sukunimi</TH>

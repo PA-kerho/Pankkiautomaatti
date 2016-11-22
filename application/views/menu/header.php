@@ -25,7 +25,7 @@
 	        <span class="caret"></span></a>
 	        <ul class="dropdown:hover dropdown-menu">
 	        	<li><a href="<?php echo site_url('asiakas/nayta_asiakas'); ?>">Tarkastele, muokkaa, poista</a></li>
-	        	<li><a href="<?php echo site_url('asiakas/lisaa_asiakas'); ?>">Lisää asiakkaita</a></li>
+	        	<li><a href="<?php echo site_url('asiakas/lisaa_asiakas'); ?>">Uusi asiakas</a></li>
 	          
 	        </ul>
 	      </li>
@@ -35,8 +35,8 @@
 	        <span class="caret"></span></a>
 	        <ul class="dropdown:hover dropdown-menu">  
 	          
-	          <li><a href="<?php echo site_url('Kortti_Tili/tilien_hallinta'); ?>">Tarkastele, muokkaa, poista</a></li>
-	          <li><a href="<?php echo site_url('Kortti_Tili/nayta_tili'); ?>">Tilit</a></li>
+	          <li><a href="<?php echo site_url('Kortti_Tili/nayta_tili'); ?>">Tarkastele, muokkaa, poista</a></li>
+	          <li><a href="<?php echo site_url('Kortti_Tili/lisaa_tili'); ?>">Uusi tili</a></li>
 	        
 	        </ul>
 	      </li>
@@ -46,8 +46,8 @@
 	        <span class="caret"></span></a>
 	        <ul class="dropdown:hover dropdown-menu">
 
-	        	<li><a href="<?php echo site_url('Kortti_Tili/korttien_hallinta'); ?>">Tarkastele, muokkaa, poista</a></li>	
-	        	<li><a href="<?php echo site_url('Kortti_Tili/nayta_kortti'); ?>">Kortit</a></li>
+	        	<li><a href="<?php echo site_url('Kortti_Tili/nayta_kortti'); ?>">Tarkastele, muokkaa, poista</a></li>	
+	        	<li><a href="<?php echo site_url('Kortti_Tili/lisaa_kortti'); ?>">Kortit</a></li>
 	          
 	        </ul>
 	      </li>
