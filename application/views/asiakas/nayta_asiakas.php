@@ -1,6 +1,9 @@
 <h1>Asiakkaat</h1>
 
+
+
 <TABLE class="table">
+
 	<TR>
 	<TH>Etunimi</TH>
 	<TH>Sukunimi</TH>
