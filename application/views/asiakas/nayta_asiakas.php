@@ -1,6 +1,6 @@
 <h1>Asiakkaat</h1>
 
-<TABLE BORDER=2>
+<TABLE class="table" BORDER=2>
 	<TR>
 	<TH>Etunimi</TH>
 	<TH>Sukunimi</TH>
