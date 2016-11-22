@@ -68,9 +68,7 @@ Class Kirjaudu extends CI_Controller {
 					}
 			} 
 					else {
-					$data = array(
-					'error_message' => 'Väärä käyttäjätunnus tai salasana'
-					);
+					echo '<script>alert("käyttäjätunnus tai Salasana on virheellinen");</script>';
 					$this->load->view('etusivu/login', $data);
 					}
 		}
