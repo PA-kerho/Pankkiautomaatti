@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('style/css/Bordered-form.css');?>">
 <?php
 
 Class Kirjaudu_model extends CI_Model {

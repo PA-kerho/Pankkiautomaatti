@@ -5,7 +5,7 @@
 <title>PA-pankki</title>
 </head>
 <body>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('style/css/bootstrap.min.css');?>">
+<link rel="stylesheet" type="text/css" href="style/css/Bordered-form.css">
 
 <ul>
 
