@@ -1,6 +1,10 @@
 <h1>Asiakkaat</h1>
 
+<<<<<<< HEAD
 <TABLE class="table" BORDER=2>
+=======
+<TABLE class="table">
+>>>>>>> master
 	<TR>
 	<TH>Etunimi</TH>
 	<TH>Sukunimi</TH>
@@ -24,12 +28,12 @@
 		<td>'.$rivi['Postinumero'].'</td><td>';
 		
 
-		echo '<form action="poista_asiakas" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btnpoista_asiakas" class="btn btn-primary btn-xs" value="Poista"/>
+		echo '<form action="poista_asiakas" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btnpoista_asiakas" class="btn btn-poista btn-xs" value="Poista"/>
 		</form>';
 		/*echo '</td><td>&nbsp&nbsp;</td><td><form action="nayta_muokattava_asiakas" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btn_paivita_asiakas" class="btn btn-primary btn-xs" value="Muokkaa"/>
 		</form>'; */
 		echo 
-		'<td><a href="nayta_muokattava_asiakas?ID='.$rivi['ID'].'" class="btn btn-primary btn-xs">Muokkaa</a></td></tr>';
+		'<td><a href="nayta_muokattava_asiakas?ID='.$rivi['ID'].'" class="btn btn-muokkaa btn-xs">Muokkaa</a></td></tr>';
 		
 		echo '</td></tr>';
 
