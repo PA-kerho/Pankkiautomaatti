@@ -8,7 +8,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('style/css/bootstrap.css');?>">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="<?php echo base_url('style/js/bootstrap.js');?>"></script>
-<link rel="stylesheet" type="text/css" href="style/css/Bordered-form.css">
+<link rel="stylesheet" type="text/css" href="?php echo base_url('style/css/Bordered-form.css');?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url('style/css/Styles.css'); ?>">
 
 <ul>
 
