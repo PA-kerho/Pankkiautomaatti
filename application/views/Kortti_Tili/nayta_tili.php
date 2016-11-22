@@ -9,7 +9,7 @@
 	
 	</TR>
 <?php
-	foreach ($asiakas as $rivi) {
+	foreach ($Kortti_Tili as $rivi) {
 		echo '<tr>
 		<td>'.$rivi['ID'].'</td>
 		<td>'.$rivi['IBAN'].'</td>
