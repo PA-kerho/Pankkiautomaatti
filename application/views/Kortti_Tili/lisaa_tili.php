@@ -1,6 +1,6 @@
 <h1>Lisää tili</h1>
 	<form method="POST" action="lisaa_tili">
-		<label>IBAN</label> <input type="text" name="IBAN"> <br>
-		<label>Tilin nimi</label> <input type="text" name="TilinNimi"> <br>
+		<input type="text" name="IBAN" required="" placeholder="IBAN"><br>
+		<input type="text" name="TilinNimi" required="" placeholder="Tilin nimi"> <br>
 		<input type="submit" name="btnTallenna" value="Tallenna">
 	</form>

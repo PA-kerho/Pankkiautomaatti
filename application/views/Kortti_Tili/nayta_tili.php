@@ -1,6 +1,6 @@
 <h1>Tilit</h1>
 
-<TABLE BORDER=2>
+<TABLE class="table">
 	<TR>
 	<TH>Tili-id</TH>
 	<TH>Tilinumero</TH>
