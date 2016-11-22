@@ -7,18 +7,23 @@ form {
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 4px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    text-align: center;
 }
-
+#LoginForm input[type=text], input[type=password], button[type=submit]{
+    width: 400px;
+    position: relative;
+    left: calc(50% - 200px);
+}
 /* Set a style for all buttons */
 button {
     background-color: #7ad109;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 4px 0;
     border: none;
     cursor: pointer;
     width: 100%;
@@ -39,7 +44,7 @@ button {
 
 /* Avatar image */
 img.avatar {
-    width: 10%;
+    width: 20%;
     border-radius: 5%;
 }
 

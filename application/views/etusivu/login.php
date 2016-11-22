@@ -15,18 +15,18 @@ if (isset($this->session->userdata['logged_in'])) {
 
 ?>
 
-<form action="action_page.php">
+<form id="LoginForm" action="action_page.php">
   <div class="imgcontainer">
     <img src="<?php echo base_url('img_avatar2.png');?>" alt="Avatar" class="avatar">
   </div>
 
-  <div class="container">
-    <label>Käyttäjätunnus :</label>
-    <input type="text" name="username" id="name">
-
-   	<label>Salasana :</label>
-    <input type="password" name="password" id="password" placeholder="**********"/>
-
+  <div class="container" id="LoginForm">
+    
+    <input type="text" name="username" id="name" placeholder="Käyttäjätunnus">
+<br>
+   	
+    <input type="password" name="password" id="password" placeholder="Salasana"/>
+<br>
     <button type="submit">Login</button>
   </div>
 
