@@ -7,8 +7,6 @@ if (isset($this->session->userdata['logged_in'])) {
 }
 ?>
 <body>
-
-<h1>Kirjaudu sisään</h2>
 <hr/>
 <?php
 
