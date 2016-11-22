@@ -22,10 +22,10 @@ if (isset($this->session->userdata['logged_in'])) {
 
   <div class="container" id="LoginForm">
     
-    <input type="text" name="username" id="name" placeholder="Käyttäjätunnus">
+    <input type="text" name="username" id="name" placeholder="Käyttäjätunnus" required="">
 <br>
    	
-    <input type="password" name="password" id="password" placeholder="Salasana"/>
+    <input type="password" name="password" id="password" placeholder="Salasana" required="" />
 <br>
     <button type="submit">Login</button>
   </div>
