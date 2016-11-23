@@ -14,7 +14,6 @@ class Kortti_Tili extends CI_Controller {
 		$this->load->view('menu/sisalto',$data);
 	}
 	public function nayta_liitetyt_kortit(){
-		$this-load
 	}
 	public function lisaa_kortti() {
 		$btn=$this->input->post('btnTallenna');
