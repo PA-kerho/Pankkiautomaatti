@@ -18,9 +18,11 @@
 
 		echo '<div class="dropdown">
 				<button class ="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Liitetyt kortit
-				<span class="caret"></span></button>
+				<span class="caret"></span></button><form action="nayta_liitetyt_kortit" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"</form>
 				<ul class="dropdown-menu">
-				<li><a href="http://localhost/Pankkiautomaatti/index.php/Kortti_Tili/nayta_liitetyt_kortit">Kortit jotka liitetty</a></li>';
+				<li><a href="http://localhost/Pankkiautomaatti/index.php/Kortti_Tili/nayta_liitetyt_kortit">Liitetyt kortit</a>
+				</li>';
+
 
 
 		 echo '</ul></div></td></tr>';

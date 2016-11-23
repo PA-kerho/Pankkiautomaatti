@@ -65,7 +65,7 @@ class Kortti_Tili extends CI_Controller {
 		$this->load->view('menu/sisalto',$data);
 	}
 
-public function lukitse_kortti(){
+	public function lukitse_kortti(){
 			$btn=$this->input->post('btnLukitse');
 			if(isset($btn))
 			{
@@ -80,7 +80,7 @@ public function lukitse_kortti(){
 			$data['sivun_sisalto']='Kortti_Tili/nayta_kortti';
 			$this->load->view('menu/sisalto',$data);
 
-		}
+	}
 		 
 	public function poista_tili(){
 		$btn = $this->input->post('btnpoista_tili');
@@ -136,9 +136,11 @@ public function lukitse_kortti(){
 	}
 
 	public function nayta_liitetyt_kortit(){
-		$id=1;
-		$this->Kortti_Tili_model->showLiitetyt();
-		$this->load->view('homo');
+		
+		$id = $this->input->post('ID');
+		$data['liitetyt']=$this->Kortti_Tili_model->showLiitetyt();
+		//$this->load->view(base_url('Kortti_Tili/liitetyt'));
+		$this->load->view('Kortti_Tili/liitetyt',$data);
 
 	}
 	
