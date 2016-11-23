@@ -1,6 +1,6 @@
 <h1>Kortit</h1>
 
-<TABLE BORDER=2>
+<TABLE class="table">
 	<TR>
 	<TH>ID_kortti</TH>
 	<TH>KortinNumero</TH>
@@ -19,7 +19,7 @@
 		<td>'.$rivi['Voimassaoloaika'].'</td><td>';
 		
 
-		echo '<form action="poista_kortti" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btnpoista_kortti" class="btn btn-primary btn-xs" value="Poista"/>
+		echo '<form action="poista_kortti" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btnpoista_kortti" class="btn btn-poista btn-xs" value="Poista"/>
 		</form>';
 		/*
 		
