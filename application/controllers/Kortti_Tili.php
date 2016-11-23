@@ -13,7 +13,9 @@ class Kortti_Tili extends CI_Controller {
 		$data['sivun_sisalto']='Kortti_Tili/nayta_kortti';
 		$this->load->view('menu/sisalto',$data);
 	}
-
+	public function nayta_liitetyt_kortit(){
+		$this-load
+	}
 	public function lisaa_kortti() {
 		$btn=$this->input->post('btnTallenna');
 		$lisaa_kortti=array("KortinNumero"=>$this->input->post('Kortnum'),
@@ -115,5 +117,7 @@ class Kortti_Tili extends CI_Controller {
 		$data['sivun_sisalto'] = 'Kortti_Tili/tilien_hallinta';
 		$this->load->view('menu/sisalto',$data);
 	}
+
+	
 }
 	

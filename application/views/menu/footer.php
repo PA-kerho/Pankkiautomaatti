@@ -4,12 +4,12 @@
 
 <div class="container" id="footer">
 
-  
-  <div class="panel panel-default">
-    <div class="panel-heading">Yhteystiedot:</div>
+    <div class="panel-heading">Yhteystiedot:
+    	<div class="footer-image-container"><img class="img-responsive footer-image" src="<?php echo base_url('footer.png')?>"> </div>
+    
+    </div>
     
     
-  </div>
 </div>
 </body>
 </html>

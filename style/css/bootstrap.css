@@ -1587,6 +1587,10 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  background-color: green;
+
+
+
 }
 @media (min-width: 768px) {
   .container {
@@ -5476,6 +5480,7 @@ button.list-group-item-danger.active:focus {
 .panel {
   margin-bottom: 20px;
   background-color: #7AD109;
+
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
@@ -5483,7 +5488,7 @@ button.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
-  background-color: green;
+  background-color: #7AD109;
   border-color: black;
 }
 .panel-heading {

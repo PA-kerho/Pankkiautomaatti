@@ -14,9 +14,12 @@
 		<td>'.$rivi['ID'].'</td>
 		<td>'.$rivi['IBAN'].'</td>
 		<td>'.$rivi['TilinNimi'].'
-		</td></tr>';
+		</td><td>';
 
-		
+		echo '<form action="nayta_liitetyt_kortit" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btn_naytakortit" class="btn btn-poista btn-xs" value="Poista"/>
+		</form>';
+
+		echo '</td></tr>';
 	}
 
 ?>
