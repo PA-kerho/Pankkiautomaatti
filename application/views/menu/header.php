@@ -48,7 +48,7 @@
 	    <ul class="dropdown:hover dropdown-menu">
 
 	        	<li><a href="<?php echo site_url('Kortti_Tili/nayta_kortti'); ?>">Tarkastele, muokkaa, poista</a></li>	
-	        	<li><a href="<?php echo site_url('Kortti_Tili/lisaa_kortti'); ?>">Kortit</a></li>
+	        	<li><a href="<?php echo site_url('Kortti_Tili/lisaa_kortti'); ?>">Uusi kortti</a></li>
 	          
 	    </ul>
 	    </li>
