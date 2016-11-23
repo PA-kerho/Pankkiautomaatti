@@ -16,12 +16,17 @@
 		<td>'.$rivi['TilinNimi'].'
 		</td><td>';
 
-		echo '<form action="nayta_liitetyt_kortit" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"><input type="submit" name="btn_naytakortit" class="btn btn-poista btn-xs" value="Poista"/>
-		</form>';
+		echo '<div class="dropdown">
+				<button class ="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Liitetyt kortit
+				<span class="caret"></span></button>
+				<ul class="dropdown-menu">
+				<li><a href="http://localhost/Pankkiautomaatti/index.php/Kortti_Tili/nayta_liitetyt_kortit">Kortit jotka liitetty</a></li>';
 
-		echo '</td></tr>';
+
+		 echo '</ul></div></td></tr>';
 	}
+?>;
 
-?>
+
 
 </TABLE> 

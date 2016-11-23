@@ -59,5 +59,11 @@ class Kortti_Tili_model extends CI_Model{
 
 	}
 
+	public function showLiitetyt($id){
+		$this->db->select('KorttiID');
+		$this->db->from('KorttiTili');
+		$this->db->where('TiliID',$id);
+	}
+
 	
 }
