@@ -20,7 +20,8 @@ class Kortti_Tili extends CI_Controller {
 		$btn=$this->input->post('btnTallenna');
 		$lisaa_kortti=array("KortinNumero"=>$this->input->post('Kortnum'),
 			"PinKoodi"=>$this->input->post('Pin'),
-			"Voimassaoloaika"=>$this->input->post('Vm'));
+			"Voimassaoloaika"=>$this->input->post('Vm'),
+			"Lukittu"=>$this->input->post('Lu'));
 
 		if(isset($btn)) {
 			$lisays=$this->Kortti_Tili_model->addKortit($lisaa_kortti);
@@ -66,6 +67,23 @@ class Kortti_Tili extends CI_Controller {
 		$this->load->view('menu/sisalto',$data);
 	}
 
+public function lukitse_kortti(){
+			$btn=$this->input->post('btnLukitse');
+			if(isset($btn))
+			{
+				$uusiData=array(
+				'Lukittu'=>($this->input->post('Lukittu') == 0 ? 1 :0));
+
+				$id=$this->input->post('ID');
+				$Lukittu=$this->Kortti_Tili_model->updateKorttiL($uusiData,$id);
+			
+			}
+			$data['Kortti_Tili']=$this->Kortti_Tili_model->getKortit();
+			$data['sivun_sisalto']='Kortti_Tili/nayta_kortti';
+			$this->load->view('menu/sisalto',$data);
+
+		}
+		 
 	public function poista_tili(){
 		$btn = $this->input->post('btnpoista_tili');
 		$id = $this->input->post('ID');
@@ -112,6 +130,7 @@ class Kortti_Tili extends CI_Controller {
 		$data['sivun_sisalto'] = 'Kortti_Tili/korttien_hallinta';
 		$this->load->view('menu/sisalto',$data);
 	}
+
 
 	public function tilien_hallinta(){
 		$data['sivun_sisalto'] = 'Kortti_Tili/tilien_hallinta';

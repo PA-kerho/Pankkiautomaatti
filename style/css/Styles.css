@@ -1,5 +1,14 @@
 div.container#footer{
   position: fixed;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  
+ color:green; 
+=======
+  background-color:#7AD109; 
+>>>>>>> master
+>>>>>>> master
   bottom: 0;
   left: 0;
   right: 0;
