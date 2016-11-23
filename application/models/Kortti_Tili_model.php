@@ -3,8 +3,8 @@
 class Kortti_Tili_model extends CI_Model{
 	public function getKortit(){
 
-		$this->db->select('*');
-		$this->db->select('ID,KortinNumero,PinKoodi,Voimassaoloaika');
+		
+		$this->db->select('ID,KortinNumero,PinKoodi,Voimassaoloaika,Lukittu');
 		$this->db->from('Kortit');
 		return $this->db->get()->result_array();
 
@@ -25,6 +25,17 @@ class Kortti_Tili_model extends CI_Model{
 		return $testi;
 
 	}
+	public function updateKorttiL($uusiData,$id){
+		$this->db->where('ID', $id);
+		$this->db->update('Kortit',$uusiData);
+		$testi=$this->db->affected_rows();
+		return $testi;
+		
+	}
+		
+
+
+	
 
 	public function getTilit(){
 		$this->db->select('*');

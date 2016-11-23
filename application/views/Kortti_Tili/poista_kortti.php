@@ -5,6 +5,7 @@
 	<TH>KortinNumero</TH>
 	<TH>PinKoodi</TH>
 	<TH>Voimassa</TH>
+	<TH>Lukittu</TH>
 	</TR>
 	<?php
 	foreach ($asiakas as $rivi) {
@@ -12,7 +13,8 @@
 		<td>'.$rivi['ID'].'</td>
 		<td>'.$rivi['KortinNumero'].'</td>
 		<td>'.$rivi['PinKoodi'].'</td><td>
-		<td>'.$rivi['Voimassaoloaika'].'</td><td>';
+		<td>'.$rivi['Voimassaoloaika'].'</td>
+		<td>'.$rivi['Lukittu'].'</td><td>';
 	
 	echo '<a href="poista_kortti/';
 	echo $rivi['ID'].'">Poista</a>';
