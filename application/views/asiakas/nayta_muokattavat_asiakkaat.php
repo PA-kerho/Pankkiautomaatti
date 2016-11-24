@@ -1,5 +1,5 @@
 <FORM action="paivita_asiakkaat" method="POST">
-<TABLE class="table table-striped table-bordered">
+<TABLE class="table ">
 <TR>
 <TH>Etunimi</TH>
 <TH>Sukunimi</TH>
