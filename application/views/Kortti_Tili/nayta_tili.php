@@ -16,6 +16,7 @@
 		<td>'.$rivi['ID'].'</td>
 		<td>'.$rivi['IBAN'].'</td>
 		<td>'.$rivi['TilinNimi'].'</td>
+<<<<<<< HEAD
 		<td>';
 
 		echo '<div class="dropdown">
@@ -28,6 +29,18 @@
 				<ul class="dropdown-menu">
 				<li> <a href="http://localhost/Pankkiautomaatti/index.php/Kortti_Tili/nayta_liitetyt_kortit?id='.$rivi['ID'].'">Liitetyt kortit</a>
 				</li></ul></div></form></td>';
+=======
+		';
+
+		echo '<td>
+				<div class="dropdown">
+					<button class ="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Liitetyt kortit
+					<span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li> <a href="http://localhost/Pankkiautomaatti/index.php/Kortti_Tili/nayta_liitetyt_kortit?id='.$rivi['ID'].'">Liitetyt kortit</a>
+							</li>
+						</ul></div></form></td>';
+>>>>>>> master
 				//echo $rivi["ID"];
 
 
