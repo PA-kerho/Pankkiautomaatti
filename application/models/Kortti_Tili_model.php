@@ -69,5 +69,13 @@ class Kortti_Tili_model extends CI_Model{
 		
 	}
 
+	public function updateTiliL($uusiData,$id){
+		$this->db->where('ID', $id);
+		$this->db->update('Tilit',$uusiData);
+		$testi=$this->db->affected_rows();
+		return $testi;
+		
+	}
+
 	
 }
