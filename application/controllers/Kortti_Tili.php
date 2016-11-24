@@ -129,6 +129,10 @@ class Kortti_Tili extends CI_Controller {
 		
 		$id = $this->input->post('ID');
 		$data['liitetyt']=$this->Kortti_Tili_model->showLiitetyt($id);
+<<<<<<< HEAD
+=======
+		//$this->load->view(base_url('Kortti_Tili/liitetyt'));
+>>>>>>> master
 		$this->load->view('Kortti_Tili/liitetyt',$data);
 	}
 
