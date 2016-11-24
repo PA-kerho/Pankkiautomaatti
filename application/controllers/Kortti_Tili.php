@@ -129,8 +129,11 @@ class Kortti_Tili extends CI_Controller {
 		
 		$id = $this->input->get('id');
 		$data['liitetyt']=$this->Kortti_Tili_model->showLiitetyt($id);
+		$data['vapaatK']=$this->Kortti_Tili_model->showVapaatKortit();
+		$data['vapaatT']=$this->Kortti_Tili_model->showVapaatTilit();
 		//echo '<script>alert("'.$id.'")</script>'; id:n tulostus alerttina
-		$this->load->view('Kortti_Tili/liitetyt',$data);
+		$data['sivun_sisalto']='Kortti_Tili/liitetyt';
+		$this->load->view('menu/sisalto',$data);
 	}
 
 	public function lukitse_tili(){
@@ -147,6 +150,23 @@ class Kortti_Tili extends CI_Controller {
 			$data['sivun_sisalto']='Kortti_Tili/nayta_tili';
 			$this->load->view('menu/sisalto',$data);
 
+	}
+	
+	public function nayta_vapaat_kortit(){
+		
+		
+		$data['vapaatK']=$this->Kortti_Tili_model->showVapaatKortit();
+		//echo '<script>alert("'.$id.'")</script>'; id:n tulostus alerttina
+		$data['sivun_sisalto']='Kortti_Tili/liitetyt';
+		$this->load->view('menu/sisalto',$data);
+	}
+
+	public function nayta_vapaat_tilit(){
+
+		$data['vapaatT']=$this->Kortti_Tili_model->showVapaatTilit();
+		//echo '<script>alert("'.$id.'")</script>'; id:n tulostus alerttina
+		$data['sivun_sisalto']='Kortti_Tili/liitetyt';
+		$this->load->view('menu/sisalto',$data);
 	}
 	
 }

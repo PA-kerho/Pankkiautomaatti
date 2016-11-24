@@ -25,6 +25,9 @@
 							</li>
 						</ul></div></form></td>';
 				//echo $rivi["ID"];
+		/*echo '<td>
+				<div class="dropdown">
+					<button class ="btn btn-primary dropdown-toggle" type="button"'*/
 
 
 
@@ -40,7 +43,8 @@
 
 								echo '<input type="submit" name="btnLukitse" class="btn btn-muokkaa btn-xs" value="Lukitse"/>';
 							}
-			echo '</form></td></tr>';
+			echo '</form></td></tr><br>';
+
 			}
 ?>;
 

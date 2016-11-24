@@ -60,9 +60,30 @@ class Kortti_Tili_model extends CI_Model{
 	}
 
 	public function showLiitetyt($id){
+
 		$this->db->select('*');
 		$this->db->from('KorttiTili');
 		$this->db->where('TiliID',$id);
+		return $this->db->get()->result_array();
+
+		
+		
+	}
+
+	public function showVapaatKortit(){
+		
+		$this->db->select('*');
+        $this->db->from('Kortit'); 
+        $this->db->where('ID NOT IN(SELECT KorttiID FROM KorttiTili)');
+		return $this->db->get()->result_array();
+
+	}
+
+	public function showVapaatTilit(){
+		
+		$this->db->select('*');
+        $this->db->from('Tilit'); 
+        $this->db->where('ID NOT IN(SELECT TiliID FROM KorttiTili)');
 		return $this->db->get()->result_array();
 
 		
