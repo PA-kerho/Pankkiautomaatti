@@ -1,4 +1,4 @@
-<h1> Poista kortti</h1>
+<h2> Poista kortti</h2>
 <table border=1>
 <TR>
 	<TH>ID</TH>

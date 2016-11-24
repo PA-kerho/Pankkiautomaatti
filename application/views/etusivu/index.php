@@ -1,3 +1,3 @@
 <p>
-<H1 align="center">TERVETULOA</H1>
+<H1 align="middle">TERVETULOA</H1>
 </p>>

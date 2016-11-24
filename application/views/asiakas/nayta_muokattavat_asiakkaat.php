@@ -9,6 +9,8 @@
 <TH>Osoite</TH>
 <TH>Postitoimipaikka</TH>
 <TH>Postinumero</TH>
+<TH></TH>
+<TH></TH>
 </TR>
 <?php
 foreach ($Asiakas as $rivi) {

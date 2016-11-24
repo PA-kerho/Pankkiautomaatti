@@ -1,10 +1,12 @@
-<h1>Tilit</h1>
+<h2>Tilit</h2>
 
 <TABLE class="table">
 	<TR>
 	<TH>Tili-id</TH>
 	<TH>Tilinumero</TH>
 	<TH>Tilin nimi</TH>
+	<TH></TH>
+	<TH></TH>
 
 	
 	</TR>
@@ -18,7 +20,7 @@
 
 		echo '<div class="dropdown">
 				<button class ="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Liitetyt kortit
-				<span class="caret"></span></button><form action="nayta_liitetyt_kortit" method = "POST"><input type="hidden" name="ID" value="'.$rivi["Liitetyt"].'"</form>
+				<span class="caret"></span></button><form action="nayta_liitetyt_kortit" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"</form>
 				<ul class="dropdown-menu">
 				<li><a href="http://localhost/Pankkiautomaatti/index.php/Kortti_Tili/nayta_liitetyt_kortit">Liitetyt kortit</a>
 				</li>';

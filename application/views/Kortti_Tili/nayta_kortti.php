@@ -1,4 +1,4 @@
-<h1>Kortit</h1>
+<h2>Kortit</h2>
 <br>
 
 <TABLE class="table">
