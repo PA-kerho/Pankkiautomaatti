@@ -1,4 +1,4 @@
-<h1> Poista tili</h1>
+<h2> Poista tili</h2>
 <table border=1>
 <TR>
 	<TH>ID</TH>

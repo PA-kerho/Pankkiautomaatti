@@ -261,10 +261,14 @@ th {
   }
   .table {
     border-collapse: collapse !important;
+
   }
   .table td,
   .table th {
     background-color: #fff !important;
+    padding-bottom: 50px;
+    
+
   }
   .table-bordered th,
   .table-bordered td {

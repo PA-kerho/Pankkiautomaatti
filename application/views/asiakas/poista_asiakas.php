@@ -1,4 +1,4 @@
-<h1> Poista asiakas</h1>
+<h2> Poista asiakas</h2>
 <table border=1>
 <TR>
 	<TH>ID</TH>

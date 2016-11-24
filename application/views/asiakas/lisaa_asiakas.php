@@ -1,6 +1,6 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url('style/css/bootstrap.css');?>">
-<h1>Lisää asiakas</h1>
-<form class="form-group" method="POST" action="lisaa_asiakas">
+
+<h2>Lisää asiakas</h2>
+<form id="LisaaAsiakas" class="form-group" method="POST" action="lisaa_asiakas">
 <input type="text" name="en" required="" placeholder="Etunimi"> <br>
 <input type="text" name="sn" required="" placeholder="Sukunimi"> <br>
 <input type="text" name="ht" required="" placeholder="Hetu"> <br>

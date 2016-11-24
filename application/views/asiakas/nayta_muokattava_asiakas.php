@@ -1,7 +1,18 @@
-<h2>Muokkaa valitun asiakkaan tiedot</h2>
+<h2>Muokkaa tietoja</h2>
 <FORM action="<?php echo site_url('asiakas/paivita_asiakas');?>" method="POST">
-<TABLE class="table table-striped table-bordered">
-<TR><TH>Etunimi</TH><TH>Sukunimi</TH><TH>Hetu</TH><TH>Puhelinnumero</TH><TH>Sähköposti</TH><TH>Osoite</TH><TH>Postitoimipaikka</TH><TH>Postinumero</TH></TR>
+<TABLE class="table ">
+<TR>
+<TH>Etunimi</TH>
+<TH>Sukunimi</TH>
+<TH>Hetu</TH>
+<TH>Puhelinnumero</TH>
+<TH>Sähköposti</TH>
+<TH>Osoite</TH>
+<TH>Postitoimipaikka</TH>
+<TH>Postinumero</TH>
+<TH></TH>
+<TH></TH>
+</TR>
 <?php
 
 	

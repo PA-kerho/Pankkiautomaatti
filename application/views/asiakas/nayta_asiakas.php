@@ -1,8 +1,8 @@
-<h1>Asiakkaat</h1>
+<h2>Asiakkaat</h2>
 
 
 
-<TABLE class="table">
+<TABLE id="AsiakkaatTaulu" class="table">
 
 	<TR>
 	<TH>Etunimi</TH>
@@ -13,6 +13,9 @@
 	<TH>Osoite</TH>
 	<TH>Postinumero</TH>
 	<TH>Postitoimipaikka</TH>
+	<TH></TH>
+	<TH></TH>
+
 	</TR>
 	<?php
 	foreach ($asiakas as $rivi) {
