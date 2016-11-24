@@ -25,18 +25,11 @@ display:block;
 padding:100 !important;
 }
 
-h1{
-   font-family: "Berlin Sans FB", Times, serif;
-   font-size: 100px;
-   padding-top:200px;
 
-}
-
-h2{
-   font-family: "Berlin Sans FB", Times, serif;
-   font-size: 70px;
-   padding-top:50px;
-
+h3{
+  font-family: "Berlin Sans FB", Times, serif;
+   font-size:30px;
+   
 }
 #LisaaKortti{
   text-align: center;

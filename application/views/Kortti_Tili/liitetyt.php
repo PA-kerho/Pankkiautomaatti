@@ -1,4 +1,4 @@
-<h1>Liitetyt ja vapaat kortit</h1>
+<h2>Liitetyt ja vapaat kortit</h2>
 <h3>Liitetyt</h3>
 <TABLE class="table">
 	<TR>
