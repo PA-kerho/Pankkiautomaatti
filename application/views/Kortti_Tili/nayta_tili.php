@@ -14,18 +14,15 @@
 		<td>'.$rivi['ID'].'</td>
 		<td>'.$rivi['IBAN'].'</td>
 		<td>'.$rivi['TilinNimi'].'</td>
-		';
+		<td>';
 
 		echo '<div class="dropdown">
 				<button class ="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Liitetyt kortit
-<<<<<<< HEAD
-				<span class="caret"></span></button>
-=======
-				<span class="caret"></span></button><form action="nayta_liitetyt_kortit" method = "POST"><input type="hidden" name="ID" value="'.$rivi["Liitetyt"].'"</form>
->>>>>>> master
+				<span class="caret"></span></button><form action="nayta_liitetyt_kortit" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"</form>
+
 				<ul class="dropdown-menu">
-				<li><form action="nayta_liitetyt_kortit" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"<a href="http://localhost/Pankkiautomaatti/index.php/Kortti_Tili/nayta_liitetyt_kortit">Liitetyt kortit</a>"
-				</ul></div></li></form>';
+				<li><form action="nayta_liitetyt_kortit" method = "POST"><input type="hidden" name="ID" value="'.$rivi["ID"].'"<a href="http://localhost/Pankkiautomaatti/index.php/Kortti_Tili/nayta_liitetyt_kortit">Liitetyt kortit</a>
+				</ul></div></li></form></td><td>';
 				//echo $rivi["ID"];
 
 
@@ -33,15 +30,16 @@
 
 
 
-			 echo '</td><td>
+			 echo '
 			  <form action="lukitse_tili" method = "POST"><input type="hidden" name="Lukittu" value="'.$rivi["Lukittu"].'"><input type="hidden" name="ID" value="'.$rivi["ID"].'">';
 					if($rivi['Lukittu']==1){
 						echo '<input type="submit" name="btnLukitse" class="btn btn-muokkaa btn-xs" value="Avaa"/>';
 					}
 					else {
 
-						echo '<input type="submit" name="btnLukitse" class="btn btn-muokkaa btn-xs" value="Lukitse"/></td></tr></form>';
+						echo '<input type="submit" name="btnLukitse" class="btn btn-muokkaa btn-xs" value="Lukitse"/>';
 					}
+					echo '</form></td></tr>';
 	}
 ?>;
 

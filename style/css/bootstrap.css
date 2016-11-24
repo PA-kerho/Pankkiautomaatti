@@ -8,24 +8,19 @@ html {
   
 }
 body {
-<<<<<<< HEAD
   margin: 0;
-  background: url(http://localhost/Pankkiautomaatti/Bank.png) no-repeat center center fixed; 
-=======
   background: url(http://localhost/Pankkiautomaatti/Tree.png) no-repeat center center fixed; 
->>>>>>> master
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: fixed;
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
-<<<<<<< HEAD
-      -ms-text-size-adjust: 100%;
-=======
   -ms-text-size-adjust: 100%;
-  margin: 0;
->>>>>>> master
+  -ms-text-size-adjust: 100%;
+  
+
 }
 article,
 aside,
@@ -3550,7 +3545,7 @@ tbody.collapse.in {
 
 .dropdown:hover{
   color: ;
-  background: #01FF5F;
+  background: none;
 }
 ul{
   padding:0;
@@ -3559,7 +3554,7 @@ ul{
 .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
-    background: #01FF5F;
+    background: none;
  }
 
 .dropdown-menu {
