@@ -138,7 +138,7 @@ class Kortti_Tili extends CI_Controller {
 	public function nayta_liitetyt_kortit(){
 		
 		$id = $this->input->post('ID');
-		$data['liitetyt']=$this->Kortti_Tili_model->showLiitetyt();
+		$data['liitetyt']=$this->Kortti_Tili_model->showLiitetyt($id);
 		//$this->load->view(base_url('Kortti_Tili/liitetyt'));
 		$this->load->view('Kortti_Tili/liitetyt',$data);
 

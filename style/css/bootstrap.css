@@ -5,16 +5,17 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  background: url(http://localhost/Pankkiautomaatti/Bank.png) no-repeat center center fixed; 
+  
+}
+body {
+  background: url(http://localhost/Pankkiautomaatti/Tree.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: fixed;
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
-}
-body {
+  -ms-text-size-adjust: 100%;
   margin: 0;
 }
 article,
