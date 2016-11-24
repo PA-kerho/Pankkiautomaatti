@@ -5,6 +5,6 @@
 		<td>'.$rivi['TiliID'].'</td>
 		<td>'.$rivi['KorttiID'].'
 		</td><td>';
-}
+		}
 
 ?>

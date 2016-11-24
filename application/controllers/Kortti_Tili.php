@@ -124,23 +124,27 @@ class Kortti_Tili extends CI_Controller {
 		$this->load->view('menu/sisalto',$data);
 	}
 
-	public function korttien_hallinta(){
-		$data['sivun_sisalto'] = 'Kortti_Tili/korttien_hallinta';
-		$this->load->view('menu/sisalto',$data);
-	}
-
-
-	public function tilien_hallinta(){
-		$data['sivun_sisalto'] = 'Kortti_Tili/tilien_hallinta';
-		$this->load->view('menu/sisalto',$data);
-	}
 
 	public function nayta_liitetyt_kortit(){
 		
 		$id = $this->input->post('ID');
-		$data['liitetyt']=$this->Kortti_Tili_model->showLiitetyt();
-		//$this->load->view(base_url('Kortti_Tili/liitetyt'));
+		$data['liitetyt']=$this->Kortti_Tili_model->showLiitetyt($id);
 		$this->load->view('Kortti_Tili/liitetyt',$data);
+	}
+
+	public function lukitse_tili(){
+			$btn=$this->input->post('btnLukitse');
+			if(isset($btn))
+			{
+				$uusiData=array(
+				'Lukittu'=>($this->input->post('Lukittu') == 0 ? 1 :0));
+				$id=$this->input->post('ID');
+				$Lukittu=$this->Kortti_Tili_model->updateTiliL($uusiData,$id);
+			
+			}
+			$data['Kortti_Tili']=$this->Kortti_Tili_model->getTilit();
+			$data['sivun_sisalto']='Kortti_Tili/nayta_tili';
+			$this->load->view('menu/sisalto',$data);
 
 	}
 	
