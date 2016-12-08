@@ -18,13 +18,12 @@
 		<td>'.$rivi['TilinNimi'].'</td>';
 
 		echo '<td>
-				<div class="dropdown">
-					<button class ="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Liitetyt kortit
-					<span class="caret"></span></button>
-						<ul class="dropdown-menu">
-							<li> <a href="http://localhost/Pankkiautomaatti/index.php/Kortti_Tili/nayta_liitetyt_kortit?id='.$rivi['ID'].'">Liitetyt kortit</a>
-							</li>
-						</ul></div></form></td>';
+				
+					<button class ="btn btn-primary type="button">
+					<a href="http://localhost/Pankkiautomaatti/index.php/Kortti_Tili/nayta_liitetyt_kortit?id='.$rivi['ID'].'">Liitä korttiin</a></button>
+						
+							
+						</form></td>';
 				
 		
 
@@ -40,7 +39,7 @@
 			echo '<input type="submit" name="btnLukitse" class="btn btn-muokkaa btn-xs" value="Lukitse"/>';
 			}
 							}
-			echo '</form></td></tr><br>';
+			echo '</form></td></tr><br><br><br><br>';
 
 			
 ?>;

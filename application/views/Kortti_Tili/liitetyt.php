@@ -1,10 +1,14 @@
+<form action="liitaTiliKortti?id=<?php echo $_GET['id']; ?>" method="POST">
+
+<input type="hidden" name="TiliID" value="<?php echo $_GET['id']; ?>">
 <h2>Liitetyt ja vapaat kortit</h2>
 <h3>Liitetyt</h3>
 <TABLE class="table">
 	<TR>
-	<TH>Tili-id</TH>
-	<TH>Tilinumero</TH>
-	<TH>KorttiID</TH>
+	<TH>Liitos-id</TH>
+	<TH>Tili-Id</TH>
+	<TH>Kortti-id</TH>
+
 	
 
 
@@ -26,37 +30,29 @@
 
 <TABLE class="table">
 	<TR>
+	<TH>ID</TH>
 	<TH>Kortinnumero</TH>
 	<TH>Voimassa</TH>
 </TR>
 
+
 <?php
 
 	foreach ($vapaatK as $rivi) {
-		echo '<tr>
+		
+		echo '<tr> 
+		<td>'.$rivi['ID'].'</td>
 		<td>'.$rivi['KortinNumero'].'</td>
-		<td>'.$rivi['Voimassaoloaika'].'</td></tr>';
-		}
+		<td>'.$rivi['Voimassaoloaika'].'<td><td><input type="radio" name="yhdista" value="'.$rivi['ID'].'"</td></tr></input>';
+}
+		
+
 
 ?>
-</TABLE>
 
-<h3>Vapaat tilit</h3>
-<TABLE class="table">
-	<TR>
-	<TH>Tilin nimi</TH>
-	<TH>Tilinumero</TH>
-</TR>
-
-<?php
-
-	foreach ($vapaatT as $rivi) {
-		echo '<tr>
-		<td>'.$rivi['TilinNimi'].'</td>
-		<td>'.$rivi['IBAN'].'</td></tr>';	
-		}
-
-?>
 </TABLE>
 
 
+<input class="btn btn-primary" type="submit" name="btnliita" value="Liitä" >
+
+</form>

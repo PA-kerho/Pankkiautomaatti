@@ -99,4 +99,14 @@ class Kortti_Tili_model extends CI_Model{
 	}
 
 	
+	public function JoinTiliKortti($uusiData){
+		
+		
+
+		$this->db->insert('KorttiTili',$uusiData);
+		
+		$testi=$this->db->affected_rows();
+		return $testi;
+		
+	}
 }

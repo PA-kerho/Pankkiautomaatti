@@ -8,8 +8,8 @@
 	<TH>Etunimi</TH>
 	<TH>Sukunimi</TH>
 	<TH>Henkilötunnus</TH>
-	<TH>Puhelinnumero</TH>
 	<TH>e-mail</TH>
+	<TH>Puhelinnumero</TH>
 	<TH>Osoite</TH>
 	<TH>Postinumero</TH>
 	<TH>Postitoimipaikka</TH>

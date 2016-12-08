@@ -169,5 +169,26 @@ class Kortti_Tili extends CI_Controller {
 		$this->load->view('menu/sisalto',$data);
 	}
 	
+	public function liitaTiliKortti(){
+		$btn=$this->input->post('btnliita');
+		$Kid = $this->input->post('yhdista');
+		$id = $this->input->post('TiliID');
+		if (isset($btn) && isset($id) && isset($Kid)){
+			$uusiData=array('KorttiID'=>$Kid,'TiliID'=>$id);
+			$this->Kortti_Tili_model->JoinTiliKortti($uusiData);
+		} else {
+				echo '<script>alert("KORTIT LOPPU");</script>';
+		}
+		$data['liitetyt']=$this->Kortti_Tili_model->showLiitetyt($id);
+		$data['vapaatK']=$this->Kortti_Tili_model->showVapaatKortit();
+
+		$data['sivun_sisalto']='Kortti_Tili/liitetyt';
+		$this->load->view('menu/sisalto',$data);
+	
+	}
+		
+
+	
 }
+
 	
