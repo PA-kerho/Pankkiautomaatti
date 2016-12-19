@@ -24,8 +24,17 @@ height: 140px;
 display:block;
 padding:100 !important;
 }
+h1{
+  font-family: "Berlin Sans FB", Times, serif;
+   font-size:70px;
+   
+}
 
-
+h2{
+  font-family: "Berlin Sans FB", Times, serif;
+   font-size:50px;
+   
+}
 h3{
   font-family: "Berlin Sans FB", Times, serif;
    font-size:30px;
