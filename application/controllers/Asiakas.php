@@ -1,21 +1,28 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Asiakas extends CI_Controller {
+	
 	function __construct(){
 		parent::__construct();
 		$this->load->model('Asiakas_model');
 	}
 	public function nayta_asiakas(){
+		$this->load->library('session');
 		$this->load->model('Asiakas_model');
-		$data['asiakas']=$this->Asiakas_model->getAsiakas();
-		$data['sivun_sisalto']='asiakas/nayta_asiakas';
-		$this->load->view('menu/sisalto',$data);
-	
+			if(isset($this->session->userdata['logged_in'])){
+				$data['asiakas']=$this->Asiakas_model->getAsiakas();
+				$data['sivun_sisalto']='asiakas/nayta_asiakas';
+				$this->load->view('menu/sisalto',$data);	
+			}
+			else{
+				$this->load->view('etusivu/login');
+		}
 	}
 
    	public function lisaa_asiakas() {
+   		$this->load->library('session');
+   		if(isset($this->session->userdata['logged_in'])){
 		$btn=$this->input->post('btnTallenna');
 		$lisaa_asiakas=array(
 			"Etunimet"=>$this->input->post('en'),
@@ -36,16 +43,29 @@ class Asiakas extends CI_Controller {
 
 		$data['sivun_sisalto']='asiakas/lisaa_asiakas';
 		$this->load->view('menu/sisalto',$data);
+	}
+	else{
+				$this->load->view('etusivu/login');
+		}
 
 	}
 	public function nayta_poistettavat() {
 		
 		$data['asiakas']=$this->Asiakas_model->getAsiakas();
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		$data['sivun_sisalto']='asiakas/poista_asiakas';
 		$this->load->view('menu/sisalto',$data);
+		}
+	else{
+				$this->load->view('etusivu/login');
+		}
 	}
+
 	public function poista_asiakas(){
 		$btn = $this->input->post('btnpoista_asiakas');
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		$id = $this->input->post('ID');
 		
 		if(isset($btn)){
@@ -60,19 +80,32 @@ class Asiakas extends CI_Controller {
 			$this->load->view('menu/sisalto',$data);
 
 			}
+		}
+		else{
+				$this->load->view('etusivu/login');
+		}
 	}
 
 	
 	public function nayta_muokattava_asiakas() {
 		$id = $this->input->get('ID');
 		$data['asiakas']=$this->Asiakas_model->getValittuAsiakas($id);
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		$data['id']=$id;
 		$data['sivun_sisalto']='asiakas/nayta_muokattava_asiakas';
 		$this->load->view('menu/sisalto',$data);
 	}
+		else{
+					$this->load->view('etusivu/login');
+			}
+		}
+
 
 	public function paivita_asiakas(){
 		$btn=$this->input->post('btnTallenna');
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		//jos tallenna painiketta painettu
 			if(isset($btn))
 		 	{
@@ -90,6 +123,11 @@ class Asiakas extends CI_Controller {
 			 $this->nayta_asiakas();
 			}
 
-	}
+		}
+		else{
+				$this->load->view('etusivu/login');
+			}
+	}	
+
 }
 

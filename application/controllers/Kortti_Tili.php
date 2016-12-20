@@ -9,13 +9,21 @@ class Kortti_Tili extends CI_Controller {
 	}
 	public function nayta_kortti(){
 		$this->load->model('Kortti_Tili_model');
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		$data['Kortti_Tili']=$this->Kortti_Tili_model->getKortit();
 		$data['sivun_sisalto']='Kortti_Tili/nayta_kortti';
 		$this->load->view('menu/sisalto',$data);
+		}
+		else{
+				$this->load->view('etusivu/login');
+			}
 	}
 	
 	public function lisaa_kortti() {
 		$btn=$this->input->post('btnTallenna');
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		$lisaa_kortti=array("KortinNumero"=>$this->input->post('Kortnum'),
 			"PinKoodi"=>$this->input->post('Pin'),
 			"Voimassaoloaika"=>$this->input->post('Vm'),
@@ -30,43 +38,60 @@ class Kortti_Tili extends CI_Controller {
 
 		$data['sivun_sisalto']='Kortti_Tili/lisaa_kortti';
 		$this->load->view('menu/sisalto',$data);
+	}
+		else{
+				$this->load->view('etusivu/login');
+			}
 }
 	public function nayta_poistettavat() {
 		
 		$data['Kortti_Tili']=$this->Kortti_Tili_model->getKortit();
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		$data['sivun_sisalto']='Kortti_Tili/poista_kortti';
 		$this->load->view('menu/sisalto',$data);
+		}
+		else{
+			$this->load->view('etusivu/login');
+		}
 	}
 	public function poista_kortti(){
+		$this->load->library('session');
 		$btn = $this->input->post('btnpoista_kortti');
 		$id = $this->input->post('ID');
+		
 		
 		if(isset($btn)){
 			$poista_kortti=$this->Kortti_Tili_model->delKortit($id);	
 			if ($poista_kortti>0){
  				echo '<script>alert("Poisto onnistui");</script>';
  			}
- 			
-
-				$data['Kortti_Tili']=$this->Kortti_Tili_model->getKortit();
+ 				$data['Kortti_Tili']=$this->Kortti_Tili_model->getKortit();
 				$data['sivun_sisalto']='Kortti_Tili/nayta_kortti';
 				$this->load->view('menu/sisalto',$data);
-
+				
+				
 			}
-
-
 
 	}
 
 	public function nayta_poistettavat_tilit() {
 		
 		$data['Kortti_Tili']=$this->Kortti_Tili_model->getTilit();
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		$data['sivun_sisalto']='Kortti_Tili/poista_tili';
 		$this->load->view('menu/sisalto',$data);
+		}
+		else{
+			$this->load->view('etusivu/login');
+		}
 	}
 
 	public function lukitse_kortti(){
 			$btn=$this->input->post('btnLukitse');
+			$this->load->library('session');
+			if(isset($this->session->userdata['logged_in'])){
 			if(isset($btn))
 			{
 				$uusiData=array(
@@ -79,6 +104,10 @@ class Kortti_Tili extends CI_Controller {
 			$data['Kortti_Tili']=$this->Kortti_Tili_model->getKortit();
 			$data['sivun_sisalto']='Kortti_Tili/nayta_kortti';
 			$this->load->view('menu/sisalto',$data);
+		}
+			else{
+				$this->load->view('etusivu/login');
+			}
 
 	}
 		 
@@ -102,13 +131,21 @@ class Kortti_Tili extends CI_Controller {
 
 	public function nayta_tili(){
 		$this->load->model('Kortti_Tili_model');
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		$data['Kortti_Tili']=$this->Kortti_Tili_model->getTilit();
 		$data['sivun_sisalto']='Kortti_Tili/nayta_tili';
 		$this->load->view('menu/sisalto',$data);
+		}
+		else{
+				$this->load->view('etusivu/login');
+			}
 	}
 
 	public function lisaa_tili() {
 		$btn=$this->input->post('btnTallenna');
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		$lisaa_tili=array("IBAN"=>$this->input->post('IBAN'),
 			"TilinNimi"=>$this->input->post('TilinNimi'));
 			
@@ -122,22 +159,35 @@ class Kortti_Tili extends CI_Controller {
 
 		$data['sivun_sisalto']='Kortti_Tili/lisaa_tili';
 		$this->load->view('menu/sisalto',$data);
+		}
+		else{
+				$this->load->view('etusivu/login');
+			}
 	}
 
 
 	public function nayta_liitetyt_kortit(){
 		
 		$id = $this->input->get('id');
+		$this->load->library('session');
+		if(isset($this->session->userdata['logged_in'])){
 		$data['liitetyt']=$this->Kortti_Tili_model->showLiitetyt($id);
 		$data['vapaatK']=$this->Kortti_Tili_model->showVapaatKortit();
 		$data['vapaatT']=$this->Kortti_Tili_model->showVapaatTilit();
 		//echo '<script>alert("'.$id.'")</script>'; id:n tulostus alerttina
 		$data['sivun_sisalto']='Kortti_Tili/liitetyt';
 		$this->load->view('menu/sisalto',$data);
+		}
+		else{
+				$this->load->view('etusivu/login');
+			}
 	}
 
 	public function lukitse_tili(){
 			$btn=$this->input->post('btnLukitse');
+			$this->load->library('session');
+			if(isset($this->session->userdata['logged_in'])){
+
 			if(isset($btn))
 			{
 				$uusiData=array(
@@ -149,16 +199,25 @@ class Kortti_Tili extends CI_Controller {
 			$data['Kortti_Tili']=$this->Kortti_Tili_model->getTilit();
 			$data['sivun_sisalto']='Kortti_Tili/nayta_tili';
 			$this->load->view('menu/sisalto',$data);
-
+		}
+			else{
+					$this->load->view('etusivu/login');
+				}
 	}
 	
 	public function nayta_vapaat_kortit(){
 		
 		
 		$data['vapaatK']=$this->Kortti_Tili_model->showVapaatKortit();
+		$this->load->library('session');
+			if(isset($this->session->userdata['logged_in'])){
 		//echo '<script>alert("'.$id.'")</script>'; id:n tulostus alerttina
 		$data['sivun_sisalto']='Kortti_Tili/liitetyt';
 		$this->load->view('menu/sisalto',$data);
+		}
+		else{
+					$this->load->view('etusivu/login');
+				}
 	}
 
 	public function nayta_vapaat_tilit(){

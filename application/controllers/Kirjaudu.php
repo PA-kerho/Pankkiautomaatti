@@ -41,22 +41,22 @@ Class Kirjaudu extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE) {
 			if(isset($this->session->userdata['logged_in'])){
-			$this->load->view('etusivu/index');
-			}else{
-			$this->load->view('etusivu/login');
+				$this->load->view('etusivu/index');
+			} else {
+				$this->load->view('etusivu/login');
 			}
-			}
+		}
 		else {
 			$data = array(
-			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password')
+				'username' => $this->input->post('username'),
+				'password' => $this->input->post('password')
 			);
 			$result = $this->Kirjaudu_model->login($data);
-				if ($result == TRUE) {
+			if ($result == TRUE) {
 
 				$username = $this->input->post('username');
 				$result = $this->Kirjaudu_model->read_user_information($username);
-					if ($result != false) {
+				if ($result != false) {
 					$session_data = array(
 					'username' => $result[0]->Nimi,
 					);
@@ -65,12 +65,11 @@ Class Kirjaudu extends CI_Controller {
 					$data['sivun_sisalto']='etusivu/index';
 					$this->load->view('menu/sisalto',$data);
 					//header("location: http://localhost/Pankkiautomaatti/index.php/Etusivu/index");
-					}
-			} 
-					else {
-					echo '<script>alert("käyttäjätunnus tai Salasana on virheellinen");</script>';
-					$this->load->view('etusivu/login', $data);
-					}
+				}
+			} else {
+				echo '<script>alert("käyttäjätunnus tai Salasana on virheellinen");</script>';
+				$this->load->view('etusivu/login', $data);
+			}
 		}
 	}
 
@@ -82,8 +81,8 @@ Class Kirjaudu extends CI_Controller {
 		'username' => ''
 		);
 		$this->session->unset_userdata('logged_in', $sess_array);
-		$data['message_display'] = 'Kirjauduit ulos!';
-		$this->load->view('etusivu/login', $data);
+		echo '<script>alert("Kirjauduit ulos");</script>';
+		$this->load->view('etusivu/login');
 	}
 
 }

@@ -7,13 +7,13 @@ class Etusivu extends CI_Controller {
 
 	public function index(){
 		$data['sivun_sisalto']='etusivu/index';
-		if(isset($_SESSION['logged_in'])){
+		if(isset($this->session->userdata['logged_in'])){
+		//if(isset($_SESSION['logged_in'])){
 		$this->load->view('menu/sisalto',$data);
 		}
 		else{
-			//header('Location:http://localhost/Pankkiautomaatti/index.php/kirjaudu/index');
 			//$this->load->view('etusivu/login');
-			}
 		}
+	}
 	
 }
